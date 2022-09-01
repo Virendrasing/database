@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: timescale/timescaledb:latest-pg10
+    container_name: my_postgres_database2
+    restart: always
+    volumes:
+        - ./data:/var/lib/postgresql/data
+    ports:
+      - "0.0.0.0:5432:5432"
+    environment:
+      - 'POSTGRES_PASSWORD=i2i@1234'
+      - 'POSTGRES_DB=my_default_database'
